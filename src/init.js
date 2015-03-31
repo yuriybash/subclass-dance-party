@@ -34,6 +34,12 @@ $(document).ready(function(){
     $('body').append(dancer.$node);
   });
 
+  $('body').on('mouseover', '.twerkOnMe', function () {
+    var newSquidWard = new makeSquidwardDancer(this.offsetTop - 100, this.offsetLeft-13, Math.random() * 1000);
+    window.dancers.push(newSquidWard);
+   $('body').append(newSquidWard.$node);
+  });
+
 $(".lineUp").on("click", function(event){
 
     var lastSpiderTopPosition = 0;
@@ -42,49 +48,37 @@ $(".lineUp").on("click", function(event){
   for (var i = 0; i<window.dancers.length; i++) {
 
 
-
-
     var $a = window.dancers[i].$node;
     if(window.dancers[i].character === "spiderman"){
-      console.log(window.dancers[i].$node)
       $a.animate({left:"0px", top:lastSpiderTopPosition}, 3000)
-      lastSpiderTopPosition = lastSpiderTopPosition + 100;
+      lastSpiderTopPosition = lastSpiderTopPosition + 150;
     } else if(window.dancers[i].character === "obama"){
          $a.animate({left:1329, top: lastObamaTopPosition}, 3000)
          lastObamaTopPosition = lastObamaTopPosition + 120
 
     }
 
-    console.log(window.dancers[i].$node[0].offsetTop)
+
 
     }
   });
 
-  $(".makeSquidWard").on("click", function(event){
+  // $(".makeSquidWard").on("click", function(event){
 
-      for(var i = 0; i < window.dancers.length; i++){
+  //     for(var i = 0; i < window.dancers.length; i++){
 
-            console.log("TEST");
+  //         if(window.dancers[i].character !== "squidward"){
 
-          if(window.dancers[i].character !== "squidward"){
+  //             var newSquidWard = new makeSquidwardDancer(window.dancers[i].$node[0].offsetTop - 100, window.dancers[i].$node[0].offsetLeft-13, Math.random() * 1000);
+  //             window.dancers.push(newSquidWard);
+  //             $('body').append(newSquidWard.$node);
 
+  //         }
 
-              console.log(window.dancers[i]);
-
-
-              var newSquidWard = new makeSquidwardDancer(window.dancers[i].$node[0].offsetTop - 100, window.dancers[i].$node[0].offsetLeft-13, Math.random() * 1000);
-              window.dancers.push(newSquidWard);
-              $('body').append(newSquidWard.$node);
-
+  //     }
+  // })
 
 
-          }
-
-      }
-
-
-
-  })
 
 
 });

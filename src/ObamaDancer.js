@@ -1,7 +1,7 @@
 var makeObamaDancer = function(top, left, timeBetweenSteps) {
 
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<img src="http://i.giphy.com/WgmMsEZChSHqE.gif">');
+  this.$node = $('<img class="twerkOnMe" src="http://i.giphy.com/WgmMsEZChSHqE.gif">');
   this.setPosition(top,left);
   this.character = "obama"
 

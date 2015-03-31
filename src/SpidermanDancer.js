@@ -1,7 +1,7 @@
 var makeSpidermanDancer = function(top, left, timeBetweenSteps) {
 
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<img src="gifs/spiderman.gif">');
+  this.$node = $('<img class="twerkOnMe" src="gifs/spiderman.gif">');
   this.setPosition(top,left);
   this.character = "spiderman"
 }
