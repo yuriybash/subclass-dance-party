@@ -3,6 +3,7 @@ var makeSpidermanDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<img src="gifs/spiderman.gif">');
   this.setPosition(top,left);
+  this.character = "spiderman"
 }
 
 // var newDancer = new makeBlinkyDancer(3, 3, 10)

@@ -35,9 +35,27 @@ $(document).ready(function(){
   });
 
 $(".lineUp").on("click", function(event){
-  console.log('TEST');
+
+    var lastSpiderTopPosition = 0;
+    var lastObamaTopPosition = 0;
+
   for (var i = 0; i<window.dancers.length; i++) {
-    window.dancers[i].lineUp();
+
+
+
+
+    var $a = window.dancers[i].$node;
+    if(window.dancers[i].character === "spiderman"){
+      $a.animate({left:"0px", top:lastSpiderTopPosition}, 3000)
+      lastSpiderTopPosition = lastSpiderTopPosition + 100;
+    } else if(window.dancers[i].character === "obama"){
+         $a.animate({left:1329, top: lastObamaTopPosition}, 3000)
+         lastObamaTopPosition = lastObamaTopPosition + 120
+
+    }
+
+    console.log(window.dancers[i].$node[0].offsetTop)
+
   }
 });
 

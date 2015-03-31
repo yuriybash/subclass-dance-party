@@ -4,7 +4,7 @@ body, html{
 body{
   margin: 0px;
   background-color:white;
-  background-image: url("WhiteHouse.jpg");
+  background-image: url("http://assets.nydailynews.com/polopoly_fs/1.1544233!/img/httpImage/image.jpg_gen/derivatives/article_970/padded-1-1211.jpg");
   background-size: 100% 100%;
   font-size: 18px;
 }
@@ -31,4 +31,9 @@ img{
   height:20%;
   position:absolute;
   padding: 10px 10px 10px 10px;
+}
+
+.lineUp {
+  float: right;
+  padding: 5px 12px;
 }
