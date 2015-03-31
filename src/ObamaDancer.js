@@ -1,7 +1,8 @@
 var makeObamaDancer = function(top, left, timeBetweenSteps) {
 
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<img src="http://i.giphy.com/13RW3MoCRy28Ja.gif">');
+  this.$node = $('<img src="http://i.giphy.com/WgmMsEZChSHqE.gif">');
+  this.setPosition(top,left);
 
 }
 
