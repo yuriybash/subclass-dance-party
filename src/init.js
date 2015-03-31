@@ -46,6 +46,7 @@ $(".lineUp").on("click", function(event){
 
     var $a = window.dancers[i].$node;
     if(window.dancers[i].character === "spiderman"){
+      console.log(window.dancers[i].$node)
       $a.animate({left:"0px", top:lastSpiderTopPosition}, 3000)
       lastSpiderTopPosition = lastSpiderTopPosition + 100;
     } else if(window.dancers[i].character === "obama"){
@@ -56,8 +57,35 @@ $(".lineUp").on("click", function(event){
 
     console.log(window.dancers[i].$node[0].offsetTop)
 
-  }
-});
+    }
+  });
+
+  $(".makeSquidWard").on("click", function(event){
+
+      for(var i = 0; i < window.dancers.length; i++){
+
+            console.log("TEST");
+
+          if(window.dancers[i].character !== "squidward"){
+
+
+              console.log(window.dancers[i]);
+
+
+              var newSquidWard = new makeSquidwardDancer(window.dancers[i].$node[0].offsetTop - 100, window.dancers[i].$node[0].offsetLeft-13, Math.random() * 1000);
+              window.dancers.push(newSquidWard);
+              $('body').append(newSquidWard.$node);
+
+
+
+          }
+
+      }
+
+
+
+  })
+
 
 });
 
