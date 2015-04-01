@@ -26,7 +26,7 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      ($("body").height()-180) * Math.random(),
+      (($("body").height()-180) * Math.random())+30,
       ($("body").width()-50) * Math.random(),
       Math.random() * 1000
     );
@@ -42,26 +42,35 @@ $(document).ready(function(){
 
 $(".lineUp").on("click", function(event){
 
-    var lastSpiderTopPosition = 0;
-    var lastObamaTopPosition = 0;
+    // var lastSpiderTopPosition = 0;
+    // var lastObamaTopPosition = 0;
+
+  // for (var i = 0; i<window.dancers.length; i++) {
+
+
+  //   var $a = window.dancers[i].$node;
+  //   if(window.dancers[i].character === "spiderman"){
+  //     $a.animate({left:"0px", top:lastSpiderTopPosition}, 3000)
+  //     lastSpiderTopPosition = lastSpiderTopPosition + 150;
+  //   } else if(window.dancers[i].character === "obama"){
+  //        $a.animate({left:1329, top: lastObamaTopPosition}, 3000)
+  //        lastObamaTopPosition = lastObamaTopPosition + 120
+
+  //   }
 
   for (var i = 0; i<window.dancers.length; i++) {
-
-
     var $a = window.dancers[i].$node;
-    if(window.dancers[i].character === "spiderman"){
-      $a.animate({left:"0px", top:lastSpiderTopPosition}, 3000)
-      lastSpiderTopPosition = lastSpiderTopPosition + 150;
-    } else if(window.dancers[i].character === "obama"){
-         $a.animate({left:1329, top: lastObamaTopPosition}, 3000)
-         lastObamaTopPosition = lastObamaTopPosition + 120
-
+    if (i % 2 === 0) {
+      $a.animate({left:"0px"}, 3000)
+    } else {
+      $a.animate({left:1329}, 3000);
     }
+  }
 
 
 
     }
-  });
+  );
 
   // $(".makeSquidWard").on("click", function(event){
 
